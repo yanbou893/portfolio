@@ -1,7 +1,7 @@
 <template>
     <v-footer
     >
-        <v-card-text class="white--text">
+        <v-card-text class="white--text text-center">
             <strong>Portfolio</strong>
         </v-card-text>
  
@@ -11,7 +11,6 @@
             
     :value="activeBtn"
     
-    color="teal"
             >
         <router-link to="/">
         <v-btn>
@@ -57,3 +56,14 @@
     },
   }
 </script>
+<style>
+v-footer{
+	background-color: #41b973;
+    
+}
+    router-link{
+        text-decoration:none;
+        
+	width:20%;
+    }
+</style>
