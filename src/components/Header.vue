@@ -1,8 +1,5 @@
 <template>
-  <v-card height="400px">
     <v-footer
-      v-bind="localAttrs"
-      :padless="padless"
     >
       <v-card
         flat
@@ -15,43 +12,48 @@
         </v-card-text>
  
         <v-card-text>
-        <router-link to="/"><v-icon>grid_on</v-icon></router-link>
-        <router-link to="/favorite"><v-icon>favorite</v-icon></router-link>
-        <router-link to="/Skills"><v-icon>mode_edit</v-icon></router-link>
-        <router-link to="/mail"><v-icon>email-outline</v-icon></router-link>
-        <router-link to="/account"><v-icon>account_circle</v-icon></router-link>
+            <v-bottom-navigation
+            v-model="bottomNav"
+            dark
+            shift
+            >
+        <router-link to="/">
+        <v-btn>
+        <span>Contents</span>
+        <v-icon>grid_on</v-icon>
+        </v-btn>
+        </router-link>
+
+<router-link to="/Favorite">
+        <v-btn>
+        <span>Favorite</span>
+        <v-icon>favorite</v-icon>
+        </v-btn>
+        </router-link>
+
+<router-link to="/Skills">
+        <v-btn>
+        <span>Skills</span>
+        <v-icon>mode_edit</v-icon>
+        </v-btn>
+        </router-link>
+
+<router-link to="/Mail">
+        <v-btn>
+        <span>Mail</span>
+        <v-icon>email-outline</v-icon>
+        </v-btn>
+        </router-link>
+        
+        <v-btn>
+            <router-link to="/Account">
+        <span>Profile</span>
+        <v-icon>account_circle</v-icon>
+        </router-link>
+        </v-btn>
+      </v-bottom-navigation>
+            
+            
         </v-card-text>
-      </v-card>
     </v-footer>
 </template>
-<script>
-  export default {
-    data: () => ({
-      padless: false,
-      variant: 'default',
-    }),
-    computed: {
-      localAttrs () {
-        const attrs = {}
-
-        if (this.variant === 'default') {
-          attrs.absolute = false
-          attrs.fixed = false
-        } else {
-          attrs[this.variant] = true
-        }
-        return attrs
-      },
-    },
-  }
-</script>
-<style>
-	.nav-extended{
-	background-color: #41b973;
-}
-li{
-	width:20%;
-
-}
-
-</style>
