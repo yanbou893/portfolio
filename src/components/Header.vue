@@ -12,11 +12,11 @@
           </v-btn>
         </router-link>
 
-        <router-link to="/Favorite">
-          <v-btn>
-            <v-icon>favorite</v-icon>
-          </v-btn>
-        </router-link>
+        <!--<router-link to="/Favorite">-->
+        <!--  <v-btn>-->
+        <!--    <v-icon>favorite</v-icon>-->
+        <!--  </v-btn>-->
+        <!--</router-link>-->
 
         <router-link to="/Skills">
           <v-btn>
