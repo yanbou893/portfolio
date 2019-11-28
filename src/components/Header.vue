@@ -1,22 +1,24 @@
 <template>
   <v-app>
+      <nav class="nav-extended">
       <header id="header">
     <h1>This is the header.</h1>
-    <nav id="header-nav">
+    <div class="nav-content">
       <ul>
-		<router-link tag="li" to="/"><v-icon>grid_on</v-icon></router-link>
-		<router-link tag="li" to="/favorite"><v-icon>favorite</v-icon></router-link>
-		<router-link tag="li" to="/skills"><v-icon>mode_edit</v-icon></router-link>
-		<router-link tag="li" to="/mail"><v-icon>mail-outline</v-icon></router-link>
-		<router-link tag="li" to="/account"><v-icon>account_circle</v-icon></router-link>
+		<router-link to="/"><v-icon>grid_on</v-icon></router-link>
+		<router-link to="/favorite"><v-icon>favorite</v-icon></router-link>
+		<router-link to="/Skills"><v-icon>mode_edit</v-icon></router-link>
+		<router-link to="/mail"><v-icon>mail-outline</v-icon></router-link>
+		<router-link to="/account"><v-icon>account_circle</v-icon></router-link>
       </ul>
-    </nav>
+    </div>
   </header>
+  </nav>
   </v-app>
 </template>
 
 <style>
-	h1{
+	.nav-extended{
 	background-color: #41b973;
 }
 li{
