@@ -16,22 +16,22 @@ export default new Router({
       component: Main
     },
     {
-      path: '/',
+      path: '/Favorite',
       name: 'Favorite',
       component: Favorite
     },
     {
-      path: '/',
+      path: '/Account',
       name: 'Account',
       component: Account
     },
     {
-      path: '/',
+      path: '/Skills',
       name: 'Skills',
       component: Skills
     },
     {
-      path: '/',
+      path: '/Mail',
       name: 'Mail',
       component: Mail
     }
