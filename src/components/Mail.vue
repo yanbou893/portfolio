@@ -1,27 +1,38 @@
 <template>
-  <div class="wrapper">
-    <h1>お問い合わせ</h1>
-    <form name="contact" method="post" action="" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="form-name" value="contact" />
-      <dl>
-        <dt><label for="name">お名前</label></dt>
-        <dd><input type="text" id="name" /></dd>
-        <dt><label for="email">メールアドレス</label></dt>
-        <dd><input type="email" id="email" /></dd>
-        <dt><label>お問い合わせの種類</label></dt>
-        <dd class="selectbox">
-          <select name="item">
-            <option value="">お問い合わせの種類をご選択ください</option>
-            <option value="ご質問">ご質問</option>
-            <option value="メッセージ">メッセージ</option>
-            <option value="その他">その他</option>
-          </select>
-        </dd>
-        <dt><label>メッセージ</label></dt>
-        <dd><textarea name="message" cols="40" rows="10"></textarea></dd>
-      </dl>
-      <div class="btn"><button type="submit" class="submit-btn">送信</button></div>
-    </form>
-  </div>
+  <form
+    name="ask-question"
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    >
+    <input type="hidden" name="form-name" value="ask-question" />
+    <label v-for="(panelist, index) in panelists" :key="index">
+      <input
+        type="radio"
+        name="panelist"
+        :value="panelist"
+        @input="ev => updatePanelist"
+        :checked="panelist === currentPanelist"
+      />
+      <span>{{ panelist }}</span>
+    </label>
+    ...
+    <button>Submit</button>
+  </form>
 </template>
+<script>
+export default {
+  name: "QAForm",
+  methods: {
+    updatePanelist (ev) {
+      this.currentPanelist = ev.target.value
+    }
+  },
+  data () {
+    return {
+      panelists: ['Evan You', 'Chris Fritz'],
+      currentPanelist: 'Evan You'
+    }
+  }
+}
+</script>
