@@ -1,140 +1,54 @@
 <template>
-  <div class="question-form">
-    <notification-container
-      :status="status"
-    />
-    <form method="post" @submit.prevent="handleSubmit">
-      <input type="hidden" name="form-name" value="ask-question" />
-      <ul>
-      <li>
-        <label>
-          Your Name:
-          <input
-            type="text"
-            name="name"
-            @input="ev => form.name = ev.target.value"
-            >
-        </label>
-      </li>
-      <li>
-        <p>Ask:</p>
-        <label
-          :class="{
-            'pick-panelist': true,
-            'checked':form.askPerson === panelist,
-            'disabled': ifEvan(panelist)
-          }"
-          v-for="panelist in panelists"
-        >
-          <input
-            type="radio"
-            name="panelist"
-            @input="ev => form.askPerson = ev.target.value"
-            :value="panelist"
-            :disabled="ifEvan(panelist)"
-            :checked="form.askPerson === panelist"
-          >
-          <span>{{ panelist }}</span>
-        </label>
-      </li>
-      <li>
-        <label>
-          Your Question:
-          <textarea
-             ref="input"
-             name="question"
-             @input="ev => form.question = ev.target.value"
-             placeholder="Question Goes Here"
-          />
-        </label>
-      </li>
-      </ul>
-      <button type="submit" class="submit-button">Ask a question</button>
-    </form>
+  <div>
+  <form v-if="isSubmit === false" @submit.prevent="onSubmit">
+    <input type="text" v-model="name" name="name" >
+    <input type="email" v-model="email" name="email">
+    <textarea v-model="content" name="content"></textarea>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <div v-if="isSubmit === true">
+    <p>サンクス</p>
   </div>
+
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="content"></textarea>
+  </form>
+</div>
 </template>
 
 <script>
-import NotificationContainer from "./NotificationContainer.vue";
+import axios from 'axios'
+
 export default {
-  name: "question-form",
-  components: {
-    NotificationContainer
-  },
   data() {
     return {
-      panelists: ["Chris Fritz", "Evan You", "Both"],
-      form: {
-        askPerson: "Chris Fritz",
-        name: "",
-        question: ""
-      },
-      sent: false,
-      status: {}
-    };
+      name: '',
+      email: '',
+      content: '',
+      isSubmit: false
+    }
   },
   methods: {
-    ifEvan(person) {
-      return person === "Evan You" || person === "Both";
-    },
-    removeNotification() {
-      this.sent = false;
-    },
-    encode(data) {
-      return Object.keys(data)
-        .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join("&");
-    },
-    handleSubmit(e) {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: this.encode({
-          "form-name": "ask-question",
-          ...this.form
-        })
-      })
+    onSubmit() {
+      const params = new URLSearchParams()
+
+      params.append('form-name', 'contact') // Forms使うのに必要
+
+      params.append('name', this.name)
+      params.append('email', this.email)
+      params.append('content', this.content)
+
+      axios
+        .post('/', params)
         .then(() => {
-          this.$router.push("thanks");
+          this.isSubmit = true
         })
-        .catch(() => {
-          this.$router.push("404");
-        });
     }
   }
-};
+}
 </script>
 
-<style lang="scss">
-body {
-  text-align: left;
-}
-li {
-  margin-bottom: 1em;
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-p,
-label {
-  color: #64b587;
-  font-weight: bold;
-}
-.pick-panelist {
-  display: block;
-  position: relative;
-  color: rgba(14, 30, 37, 0.54);
-  font-weight: 300;
-  font-size: 1.35em;
-  padding: 10px 10px 10px 30px;
-  margin: 10px auto;
-  height: 30px;
-  z-index: 9;
-  cursor: pointer;
-  -webkit-transition: all 0.25s linear;
-}
-</style>
