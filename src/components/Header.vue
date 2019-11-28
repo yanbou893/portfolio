@@ -11,11 +11,13 @@
             <strong>Portfolio</strong>
         </v-card-text>
  
+     
         <v-card-text>
             <v-bottom-navigation
-            v-model="bottomNav"
-            dark
-            shift
+            
+    :value="activeBtn"
+    grow
+    color="teal"
             >
         <router-link to="/">
         <v-btn>
@@ -41,7 +43,7 @@
 <router-link to="/Mail">
         <v-btn>
         <span>Mail</span>
-        <v-icon>email-outline</v-icon>
+        <v-icon>email</v-icon>
         </v-btn>
         </router-link>
         
@@ -55,5 +57,15 @@
             
             
         </v-card-text>
+        </v-card>
     </v-footer>
 </template>
+<script>
+  export default {
+    data () {
+      return {
+        activeBtn: 1,
+      }
+    },
+  }
+</script>
