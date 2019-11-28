@@ -24,7 +24,7 @@
           </v-btn>
         </router-link>
 
-        <router-link to="/Mail">
+        <router-link to="/QuestionForm">
           <v-btn>
             <v-icon>email</v-icon>
           </v-btn>
@@ -43,7 +43,7 @@
 export default {
   data() {
     return {
-      activeBtn: 1
+      activeBtn: 0
     };
   }
 };

@@ -4,7 +4,10 @@ import Main from '../components/Main'
 import Favorite from '../components/Favorite'
 import Account from '../components/Account'
 import Skills from '../components/Skills'
-import Mail from '../components/Mail'
+import QuestionForm from "../components/QuestionForm";
+import SubmissionFail from "../components/SubmissionFail.vue";
+import SubmissionSuccess from "../components/SubmissionSucces.vue";
+
 
 Vue.use(Router)
 
@@ -31,9 +34,19 @@ export default new Router({
       component: Skills
     },
     {
-      path: '/Mail',
-      name: 'Mail',
-      component: Mail
+      path: '/QuestionForm',
+      name: 'QuestionForm',
+      component: QuestionForm
+    },
+    {
+      path: "/thanks",
+      name: "success",
+      component: SubmissionSuccess
+    },
+    {
+      path: "/404",
+      name: "fail",
+      component: SubmissionFail
     }
   ]
 })
