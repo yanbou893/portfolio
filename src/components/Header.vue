@@ -1,10 +1,8 @@
 <template>
   <v-footer>
     <v-card-text class="white--text">
-      <strong>Portfolio</strong>
-    </v-card-text>
-
-    <v-card-text>
+      <strong>ぽーとふぉりお</strong>
+      
       <v-bottom-navigation :value="activeBtn">
         <router-link to="/">
           <v-btn>
@@ -20,7 +18,7 @@
 
         <router-link to="/Skills">
           <v-btn>
-            <v-icon>mode_edit</v-icon>
+            <v-icon>favorite</v-icon>
           </v-btn>
         </router-link>
 
