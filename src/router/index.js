@@ -5,8 +5,6 @@ import Favorite from '../components/Favorite'
 import Account from '../components/Account'
 import Skills from '../components/Skills'
 import QuestionForm from "../components/QuestionForm";
-import SubmissionFail from "../components/SubmissionFail.vue";
-import SubmissionSuccess from "../components/SubmissionSucces.vue";
 
 
 Vue.use(Router)
@@ -37,16 +35,6 @@ export default new Router({
       path: '/QuestionForm',
       name: 'QuestionForm',
       component: QuestionForm
-    },
-    {
-      path: "/thanks",
-      name: "success",
-      component: SubmissionSuccess
-    },
-    {
-      path: "/404",
-      name: "fail",
-      component: SubmissionFail
     }
   ]
 })
