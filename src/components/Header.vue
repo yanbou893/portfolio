@@ -1,6 +1,5 @@
 <template>
   <footer>
-    <h1 class="title">test</h1>
     <ul class="table-ul">
         <li>
         <router-link to="/">
@@ -48,9 +47,8 @@
 .table-ul li:hover{
 	background-color: #00FF66;
 }
-footer{
-  color: #fff;
+html{
   text-align: center;
-	background-color: #00CC66;
+	background-color: rgb(112, 114, 113);
 }
 </style>

@@ -1,54 +1,96 @@
 <template>
-     <v-card
-    class="mx-auto"
-    max-width="500"
-  >
-   <v-container fluid>
-      <v-row dense>
-        <v-col
-          v-for="card in cards"
-          :key="card.title"
-          :cols="card.flex"
-        >
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title v-text="card.title"></v-card-title>
-            </v-img>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+ <div id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
+    <section class="card-list">
+        <a class="card-link" href="#">
+            <figure class="card-figure"><img src="../images/Jellyfish.jpg"></figure>
+            <h2 class="card-title">カードレイアウト1</h2>
+            <p class="card-text-tax">Flexboxとcale()を使ってかんたんにレスポンシブ対応カードレイアウトをつくる手順のご紹介</p>
+        </a>
+    </section>
+    <section class="card-list">
+        <a class="card-link" href="#">
+            <figure class="card-figure"><img src="../images/Penguins.jpg"></figure>
+            <h2 class="card-title">カードレイアウト2</h2>
+            <p class="card-text-tax">Flexboxとcale()を使ってかんたんにレスポンシブ対応カードレイアウトをつくる手順のご紹介</p>
+        </a>
+    </section>
+    <section class="card-list">
+        <a class="card-link" href="#">
+            <figure class="card-figure"><img src="../images/photo_2.jpg"></figure>
+            <h2 class="card-title">カードレイアウト3</h2>
+            <p class="card-text-tax">Flexboxとcale()を使ってかんたんにレスポンシブ対応カードレイアウトをつくる手順のご紹介</p>
+        </a>
+    </section>
+</div>
 </template>
-<script>
-  export default {
-    data: () => ({
-      cards: [
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-      ],
-    }),
-  }
-</script>
+
+<style>
+ #cardlayout-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: justify;
+	margin: 0 auto;
+	max-width: 960px;
+	width: 100%;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+/* リンクテキストの下線を非表示 */
+a.card-link {
+	text-decoration: none;
+}
+
+/* カードレイアウト内の画像を幅いっぱいに表示 */
+#cardlayout-wrap img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.card-figure {
+	margin: 0;
+	padding: 0;
+}
+
+/* カードレイアウトのタイトル部分 */
+.card-title {
+	margin: 0.6em 0 0;
+	color: #333;
+	text-align: center;
+	font-size: 1.8em;
+}
+
+/* カードレイアウトの説明文部分 */
+.card-text-tax {
+	margin: 0;
+	padding: 1em;
+	color: #818181;
+}
+
+/* カードレイアウトを1カラムで配置 */
+.card-list {
+	margin: 0.5em auto;
+	padding: 0;
+	width: 70%;
+	background: #f0f0f0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 画面幅768px以上の場合カードレイアウトを2カラムで配置 */
+@media all and (min-width: 768px) {
+	.card-list {
+			width: calc(70% / 2); /* 96%幅を2で割るという指定 */
+	}
+	
+/* 最後の行が3列より少ない場合左寄せにレイアウトさせる */
+	#cardlayout-wrap::after{
+			content: "";
+			display: block;
+			width: calc(70% / 2);
+	}
+}
+</style>
