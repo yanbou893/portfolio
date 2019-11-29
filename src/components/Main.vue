@@ -1,7 +1,7 @@
 <template>
- 	<body>
-	<p class="title">aaa</p>
-	<div class="card" id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
+<body>
+  <p class="title">aaa</p>
+  <div class="card" id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
     <section class="card-list">
         <a class="card-link" href="#">
             <figure class="card-figure"><img src="../images/Jellyfish.jpg"></figure>
