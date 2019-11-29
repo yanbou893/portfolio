@@ -24,6 +24,8 @@
 }
 ul{
 	list-style: none;
+	
+	text-align: center;
 }
 body{
 	text-align: center;
