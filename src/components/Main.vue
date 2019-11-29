@@ -1,6 +1,6 @@
 <template>
 <body>
-  <p class="title">aaa</p>
+  <p class="title">作ったモノ</p>
   <div class="card" id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
     <section class="card-list">
         <a class="card-link" href="#">
@@ -102,5 +102,8 @@ body{
 }
 .title{
 	font-size: 100px;
+}
+.card{
+	background-color: rgb(242, 247, 244);
 }
 </style>

@@ -8,7 +8,7 @@
         </li>
         <li>
         <router-link to="/Skills">
-            <v-icon>favorite</v-icon>
+            <v-icon>create</v-icon>
         </router-link>
         </li>
         <li>

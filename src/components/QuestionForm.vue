@@ -3,7 +3,7 @@
   <form v-if="isSubmit === false" @submit.prevent="onSubmit">
     <input type="text" v-model="name" name="name" >
     <input type="email" v-model="email" name="email">
-    <textarea v-model="content" name="content"></textarea>
+    <textarea v-model="content" name="message"></textarea>
 
     <button type="submit">送信</button>
   </form>
