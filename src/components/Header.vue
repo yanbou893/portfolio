@@ -7,10 +7,10 @@
           </div>
           <div class="nav-content">
             <ul class="tabs tabs-transparent">
-              <li class="tab"><router-link to="/"><span uk-icon="icon: grid"></span></router-link></li>
-              <li class="tab"><router-link to="/Skills"><span uk-icon="icon: heart"></span></router-link></li>
-              <li class="tab"><router-link to="/QuestionForm"><span uk-icon="icon: mail"></span></router-link></li>
-              <li class="tab"><router-link to="/Account"><span uk-icon="icon: user"></span></router-link></li>
+              <li class="tab"><router-link to="/"><i class="material-icons">apps</i></router-link></li>
+              <li class="tab"><router-link to="/Skills"><i class="material-icons">favorite</i></router-link></li>
+              <li class="tab"><router-link to="/QuestionForm"><i class="material-icons">mail</i></router-link></li>
+              <li class="tab"><router-link to="/Account"><i class="material-icons">account_circle</i></router-link></li>
             </ul>
           </div>
         </nav>
