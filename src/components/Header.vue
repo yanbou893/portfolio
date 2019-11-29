@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer>
     <h1 class="title">test</h1>
     <ul class="table-ul">
         <li>
@@ -9,7 +9,7 @@
         </li>
         <li>
         <router-link to="/Skills">
-            <v-icon>mode_edit</v-icon>
+            <v-icon>favorite</v-icon>
         </router-link>
         </li>
         <li>
@@ -24,15 +24,13 @@
         </li>
       </ul>
       
-      </div>
-  
+      
+  </footer>
 </template>
 <style>
 .table-ul {
-  background-color: #3ae;
   display: table;
   table-layout: fixed;
-  text-align: center;
   width: 100%;
 }
 .table-ul li {
@@ -48,6 +46,11 @@
 }
 
 .table-ul li:hover{
-	background-color: cornflowerblue;
+	background-color: #00FF66;
+}
+footer{
+  color: #fff;
+  text-align: center;
+	background-color: #00CC66;
 }
 </style>
