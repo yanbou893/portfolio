@@ -1,44 +1,29 @@
 <template>
-  <div class="footer">
-  <h1 class="uk-heading-line uk-text-center">
-    <span>portfolio</span>
-  </h1>
-      
-      <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
-
-        <ul class="uk-navbar-nav">
-        <li>
-          <router-link to="/" uk-icon="grid">
-          </router-link>
-        </li>
-        <li>
-        <router-link to="/Skills" uk-icon="heart">
-        </router-link>
-        </li>
-
-        <li>
-        <router-link to="/QuestionForm" uk-icon="mail">
-        </router-link>
-        </li>
-
-        <li>
-        <router-link to="/Account" uk-icon="user">
-        </router-link>
-        </li>
-        </div>
+  
+  
+      <nav class="nav-extended">
+          <div class="nav-wrapper">
+            <class="brand-logo">portfolio</a>
+          </div>
+          <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+              <li class="tab"><router-link to="/"><span uk-icon="icon: grid"></span></router-link></li>
+              <li class="tab"><router-link to="/Skills"><span uk-icon="icon: heart"></span></router-link></li>
+              <li class="tab"><router-link to="/QuestionForm"><span uk-icon="icon: mail"></span></router-link></li>
+              <li class="tab"><router-link to="/Account"><span uk-icon="icon: user"></span></router-link></li>
+            </ul>
+          </div>
+        </nav>
+        
 </template>
-<script>
-export default {
-  data() {
-    return {
-      activeBtn: 0
-    };
-  }
-};
-</script>
 <style>
-.footer{
-  background-color:#41b973;
+.tab{
+	width:25%;
+	
+}
+.nav-extended{
+	background-color: #41b973;
+	text-align: center;
+
 }
 </style>
