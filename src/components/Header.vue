@@ -1,29 +1,53 @@
 <template>
+  <div class="footer">
+    <h1 class="title">test</h1>
+    <ul class="table-ul">
+        <li>
+        <router-link to="/">
+            <v-icon>grid_on</v-icon>
+        </router-link>
+        </li>
+        <li>
+        <router-link to="/Skills">
+            <v-icon>mode_edit</v-icon>
+        </router-link>
+        </li>
+        <li>
+        <router-link to="/QuestionForm">
+            <v-icon>email</v-icon>
+        </router-link>
+        </li>
+        <li>
+        <router-link to="/Account">
+            <v-icon>account_circle</v-icon>
+        </router-link>
+        </li>
+      </ul>
+      
+      </div>
   
-  
-      <nav class="nav-extended">
-          <div class="nav-wrapper">
-           portfolio
-          </div>
-          <div class="nav-content">
-            <ul class="tabs tabs-transparent">
-              <li class="tab"><router-link to="/"><i class="material-icons">apps</i></router-link></li>
-              <li class="tab"><router-link to="/Skills"><i class="material-icons">favorite</i></router-link></li>
-              <li class="tab"><router-link to="/QuestionForm"><i class="material-icons">mail</i></router-link></li>
-              <li class="tab"><router-link to="/Account"><i class="material-icons">account_circle</i></router-link></li>
-            </ul>
-          </div>
-        </nav>
-        
 </template>
 <style>
-.tab{
-	width:25%;
-	
+.table-ul {
+  background-color: #3ae;
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
 }
-.nav-extended{
-	background-color: #41b973;
-	text-align: center;
+.table-ul li {
+  display: table-cell;
+  vertical-align: middle;
+}
+.table-ul li a {
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 10px 0;
+}
 
+.table-ul li:hover{
+	background-color: cornflowerblue;
 }
 </style>
