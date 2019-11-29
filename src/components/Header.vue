@@ -37,7 +37,7 @@
   vertical-align: middle;
 }
 .table-ul li a {
-  color: #fff;
+  color: rgb(29, 27, 27);
   display: block;
   font-size: 12px;
   text-decoration: none;
@@ -45,10 +45,14 @@
 }
 
 .table-ul li:hover{
-	background-color: #00FF66;
+	background-color: rgb(240, 205, 52);
 }
 html{
   text-align: center;
-	background-color: rgb(112, 114, 113);
+	background-color: rgb(242, 247, 244);
+}
+footer{
+	
+  color: #fff;
 }
 </style>

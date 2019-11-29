@@ -1,5 +1,7 @@
 <template>
- <div id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
+ 	<body>
+	<p class="title">aaa</p>
+	<div class="card" id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
     <section class="card-list">
         <a class="card-link" href="#">
             <figure class="card-figure"><img src="../images/Jellyfish.jpg"></figure>
@@ -21,16 +23,17 @@
             <p class="card-text-tax">Flexboxとcale()を使ってかんたんにレスポンシブ対応カードレイアウトをつくる手順のご紹介</p>
         </a>
     </section>
-</div>
+</div><!-- カードレイアウトをラッピング -->
+</body>
 </template>
 
 <style>
- #cardlayout-wrap {
+#cardlayout-wrap {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-pack: justify;
-	margin: 0 auto;
+	margin: 2rem auto;
 	max-width: 960px;
 	width: 100%;
 	-ms-flex-wrap: wrap;
@@ -83,14 +86,21 @@ a.card-link {
 /* 画面幅768px以上の場合カードレイアウトを2カラムで配置 */
 @media all and (min-width: 768px) {
 	.card-list {
-			width: calc(70% / 2); /* 96%幅を2で割るという指定 */
+			width: calc(90% / 2); /* 96%幅を2で割るという指定 */
 	}
 	
 /* 最後の行が3列より少ない場合左寄せにレイアウトさせる */
 	#cardlayout-wrap::after{
 			content: "";
 			display: block;
-			width: calc(70% / 2);
+			width: calc(90% / 2);
 	}
+}
+body{
+	text-align: center;
+	background-color: rgb(242, 247, 244);
+}
+.title{
+	font-size: 100px;
 }
 </style>
