@@ -3,7 +3,7 @@
   
       <nav class="nav-extended">
           <div class="nav-wrapper">
-            <class="brand-logo">portfolio</a>
+           portfolio
           </div>
           <div class="nav-content">
             <ul class="tabs tabs-transparent">
